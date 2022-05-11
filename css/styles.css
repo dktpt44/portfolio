@@ -20,8 +20,8 @@ p {
 
 /* welcome screen elements css  */
 .welcomeScreen {
-  /* display: none; */
-  display: flex;
+  display: none;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
 }
@@ -219,8 +219,12 @@ input:checked + .slider:before {
 .wholeDesktop {
   background-image: url(../images/winbg/bg1.jpg);
   background-size: cover;
-  display: none;
+  transition: all 0.2s ease-in;
+  /* display: none; */
   min-width: 800px;
+}
+.wholeDesktopDark {
+  background-image: url(../images/winbg/bg1_dark.jpg);
 }
 #winDesktop {
   height: 100%;
@@ -247,6 +251,9 @@ input:checked + .slider:before {
   background: rgba(255, 255, 255, 0.66);
   transition: all 0.1s ease;
 }
+.winTaskbar_dark {
+  background: rgba(3, 21, 41, 0.35);
+}
 .winTaskbarInner {
   width: 100%;
   height: 100%;
@@ -267,6 +274,7 @@ input:checked + .slider:before {
 .tbItemActive {
   background-color: rgba(243, 243, 243, 0.8);
 }
+
 .tbItemActive::after {
   background: var(--clrPrm);
   bottom: 5px;
@@ -286,8 +294,7 @@ input:checked + .slider:before {
   transition: all 0.2s ease;
   width: 8px !important;
 }
-.winTIconItem,
-#taskbarWidget {
+.winTIconItem {
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -298,12 +305,16 @@ input:checked + .slider:before {
   transition: all 0.1s ease-in;
 }
 .winTIconItem:hover,
-#taskbarWidget:hover,
 .notific:hover,
 .taskbarClock:hover {
   background-color: rgba(243, 243, 243, 0.8);
   cursor: pointer;
 }
+
+.winTIconItemDark:hover {
+  background-color: rgba(3, 21, 41, 0.562);
+}
+
 .itemClickAnim {
   animation: clickedanim 0.3s ease-in-out;
 }
@@ -339,6 +350,9 @@ input:checked + .slider:before {
   align-items: center;
   justify-content: center;
 }
+.taskbarClockDark {
+  color: white;
+}
 
 /* mini settings on bottom right  */
 .minisettings {
@@ -354,6 +368,19 @@ input:checked + .slider:before {
   transform: translateX(0);
   transition: 0.25s cubic-bezier(0.62, 0, 0.32, 1);
   box-shadow: 0 0 5px rgb(100, 100, 100);
+}
+.minisettingsDark {
+  background-color: #242424;
+  box-shadow: 0 0 6px rgba(8, 8, 8, 0.25);
+}
+.minisettingsDark .msImgHolder {
+  background-color: #313131;
+}
+.minisettingsDark p {
+  color: white;
+}
+.minisettingsDark .brightnessSlider img {
+  filter: invert();
 }
 .hideMinisettings {
   animation: hideOverflow 0s ease-in-out 0.15s forwards;
@@ -378,22 +405,34 @@ input:checked + .slider:before {
   justify-content: center;
   align-items: center;
 }
+
 .msImgHolder {
   cursor: pointer;
   border: 0.1px solid hsla(0, 0%, 7%, 0.1);
   border-radius: 5px;
   padding: 14px 32px;
   background-color: #fbfbfb;
+  transition: all 0.2s ease;
 }
 .msImgHolder img {
   transition: 0.2s ease-in;
 }
-#mswifi {
-  background-color: var(--clrPrm);
+.mswifiBg {
+  background-color: var(--clrPrm) !important;
 }
-#mswifi img {
+.mswifiBg img {
   filter: invert();
 }
+.notificDark img {
+  filter: invert();
+}
+.themeOn-Dark {
+  background-color: var(--clrPrm) !important;
+}
+.themeOn-Dark img {
+  filter: invert();
+}
+
 .msItmText {
   font-size: 13px;
 }
@@ -505,6 +544,14 @@ input:checked + .slider:before {
   position: relative;
   width: 100%;
   overflow: hidden;
+  transition: all 0.2s ease;
+}
+.folderHeaderDark {
+  background: #202020 radial-gradient(#1a1f35 25%, #202020 100%) no-repeat fixed;
+  color: white;
+}
+.folderHeaderDark img {
+  filter: invert();
 }
 .foldHeadLft {
   display: flex;
@@ -663,7 +710,7 @@ input:checked + .slider:before {
   width: 100%;
   text-align: center;
   background: url(../images/profileBg/socials.jpg) no-repeat center center fixed;
-  background-size: contain;
+  background-size: cover;
   color: beige;
 }
 .contactMe .abtHdItmsHold {

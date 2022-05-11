@@ -111,15 +111,16 @@ $(document).ready(() => {
 
 
   // open mini settings 
+  var miniSettings = $(".minisettings");
   $(".notific").on("click", () => {
-    $(".minisettings").toggleClass("hideMinisettings");
+    miniSettings.toggleClass("hideMinisettings");
   });
   $(".windesktopContent").on("click", (e) => {
     // to prevent collapsing when clicking on other elements 
     if (!$(e.currentTarget).is(".windesktopContent")) {
       return;
     }
-    $(".minisettings").addClass("hideMinisettings");
+    miniSettings.addClass("hideMinisettings");
   });
 
   // click handlers for taskbar items
@@ -221,6 +222,26 @@ $(document).ready(() => {
 
   });
 
+  // click handler for theme {
+  var msTheme = $("#mstheme");
+  msTheme.on("click", () => {
+    $(".wholeDesktop").toggleClass("wholeDesktopDark");
+    msTheme.toggleClass("themeOn-Dark");
+    $(".winTaskbar").toggleClass("winTaskbar_dark");
+    $(".winTIconItem").toggleClass("winTIconItemDark");
+    $(".notific").toggleClass("winTIconItemDark");
+    $(".taskbarClock").toggleClass("winTIconItemDark");
+    $(".notific").toggleClass("notificDark");
+    $(".taskbarClock").toggleClass("taskbarClockDark");
+    miniSettings.toggleClass("minisettingsDark");
+    $(".folderHeader").toggleClass("folderHeaderDark");
+
+
+
+  });
+  $("#mswifi").on("click", () => {
+    $("#mswifi").toggleClass("mswifiBg");
+  });
 
   /* folder actions */
   // maximize folder
