@@ -59,6 +59,7 @@ p {
   border-radius: 35px;
   outline: none;
   border: none;
+  display: block !important;
 }
 /* css for switch  */
 .switch {

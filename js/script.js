@@ -133,7 +133,8 @@ $(document).ready(() => {
   });
 
   var taskbarWinExp = $("#winexplorer");
-  var taskbarSetting = $("#winSettings");
+  /*
+  // var taskbarSetting = $("#winSettings");
   taskbarSetting.on("click", () => {
 
     // click animation
@@ -149,6 +150,7 @@ $(document).ready(() => {
       taskbarSetting.toggleClass("tbItemInActive");
     }
   });
+  */
 
   taskbarWinExp.on("click", () => {
     // click animation
