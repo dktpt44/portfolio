@@ -48,20 +48,30 @@ $(document).ready(() => {
   $("#procdBtn").on("click", () => {
     // load another screen 
     $(".welcomeScreen").fadeOut("slow", () => {
-      $(".loadingScreen").fadeIn("slow");
+      $(".loadingScreen").fadeIn("slow", () => {
+        // windows loading screen
+        $(".windowsTxt").css("width", "250px");
+
+      });
+
     });
 
     if (osStyle === 0) {
       /* Windows selected */
 
 
-
     } else {
       /* Mac selected*/
 
 
-
     }
+
+    setTimeout(() => {
+      $(".loadingScreen").fadeOut("slow", () => {
+        $(".wholeDesktop").fadeIn("slow");
+      });
+    }, 3000);
+
   });
 
 
@@ -100,9 +110,6 @@ $(document).ready(() => {
   $("#tbdate").text(mnth + "/" + dayy + "/" + time.getFullYear());
 
 
-
-  // windows loading screen
-  $(".windowsTxt").css("width", "250px");
   // open mini settings 
   $(".notific").on("click", () => {
     $(".minisettings").toggleClass("hideMinisettings");
@@ -114,12 +121,6 @@ $(document).ready(() => {
     }
     $(".minisettings").addClass("hideMinisettings");
   });
-
-
-
-
-
-
 
   // click handlers for taskbar items
   $("#winstart").on("click", () => {
@@ -169,10 +170,6 @@ $(document).ready(() => {
       document.getElementById('myGameId').src = document.getElementById('myGameId').src;
     }
   });
-
-
-
-
 
   // click handlers for desktop items
   $(".desktpItmHolder").on("click", (e) => {
@@ -324,21 +321,6 @@ $(document).ready(() => {
       $('.carousel-item').eq(slide).addClass('active');
     }
   });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 });
 

@@ -20,8 +20,8 @@ p {
 
 /* welcome screen elements css  */
 .welcomeScreen {
-  display: none;
-  /* display: flex; */
+  /* display: none; */
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -47,6 +47,10 @@ p {
   justify-content: space-between;
   flex-direction: row-reverse;
   margin-top: 50px;
+  transition: all 0.3s ease-out;
+}
+.proceedButton button:hover {
+  box-shadow: 0px 3px 6px 1px rgb(210, 172, 172);
 }
 .proceedButton button {
   padding: 10px 25px;
@@ -59,10 +63,13 @@ p {
   position: relative;
   display: inline-block;
   width: 60px;
+  border-radius: 34px;
   height: 34px;
+  border: 1px solid transparent;
+  transition: all 0.1s ease-in;
 }
 .switch_hover {
-  border: 1px solid red;
+  box-shadow: 0px 3px 6px 1px rgb(253, 253, 253);
 }
 .switch input {
   opacity: 0;
@@ -115,7 +122,13 @@ input:checked + .slider:before {
 .loadingScreen {
   position: relative;
   width: 100%;
-  background-color: blueviolet;
+  background: rgb(51, 51, 65);
+  background: radial-gradient(
+    circle,
+    rgba(51, 51, 65, 1) 0%,
+    rgba(58, 30, 64, 1) 50%,
+    rgba(43, 22, 47, 1) 100%
+  );
   height: 100vh;
 }
 
@@ -206,8 +219,7 @@ input:checked + .slider:before {
 .wholeDesktop {
   background-image: url(../images/winbg/bg1.jpg);
   background-size: cover;
-  /* display: none; */
-  display: block;
+  display: none;
   min-width: 800px;
 }
 #winDesktop {
