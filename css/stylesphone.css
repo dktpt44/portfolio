@@ -14,10 +14,85 @@
   #winstart,
   #winSettings,
   #gamesFold,
-  .taskbarClock, button {
+  .taskbarClock,
+  button {
     display: none;
+  }
+  .foldContnt {
+    overflow-x: hidden;
   }
   .winTaskbarIconHolder {
     left: 25px;
   }
+  .abtHdItmsHold {
+    padding: 0;
+  }
+  .abtHdItmsHold h1 {
+    font-size: 2rem;
+  }
+  .abtHdItmsHold h2 {
+    font-size: 1.4rem;
+  }
+  .abtBtnCont {
+    padding-bottom: 56px;
+  }
+  .abtMeinnrItems {
+    flex-direction: column;
+  }
+  .abtMemenu {
+    width: 100%;
+    order: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between !important;
+    padding: 5px;
+  }
+  .abtMemenu div {
+    display: inline-block;
+  }
+  .abtMecontent {
+    order: 2;
+    padding: 0;
+    width: 100%;
+  }
+  .abtMecontent img {
+    margin: 10px;
+    width: 95%;
+    border-radius: 10px;
+  }
+  .abtMenuItm {
+    font-size: 1.1em;
+  }
+  .head11 {
+    margin-top: 24px;
+  }
+  .head11,
+  #abtMeDesc {
+    text-align: center;
+  }
+  .contactMe {
+    background-size: 400%;
+  }
+  .carousel-item__image {
+    width: 0%;
+    display: none;
+  }
+  .carousel-item__info {
+    width: 100%;
+    padding: 0 12px;
+  }
+  #carouselContentTop {
+    padding: 60px 0;
+  }
+  .carContentHoolder p{
+    margin: 30px 0;
+  }
+  #myimgspinner {
+    transform-origin: 50% 50% -450px;
+  }
+  #myimgspinner img {
+    left: 8%;
+    transform-origin: 50% 50% -450px;
+  }
+
 }

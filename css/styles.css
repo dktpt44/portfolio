@@ -618,7 +618,6 @@ input:checked + .slider:before {
 }
 .abtMemenu {
   width: 30%;
-
   background-color: hsla(0, 0%, 100%, 0);
   flex-direction: column;
   justify-content: left !important;
