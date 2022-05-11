@@ -5,14 +5,595 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- adding jquery  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- animate css cdn  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+
+  <!-- linking stylesheets  -->
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/stylesphone.css" />
   <title>Dhurba</title>
 </head>
 
 <body>
-  This is my portfolio boiz
+
+  <!-- ask the user to choose between windows or mac  -->
+  <div class="welcomeScreen">
+    <div class="osOptions">
+      <h2> Please select an OS style to begin</h2>
+
+      <div class="os-option">
+        <h3>Windows</h3>
+        <label class="switch" id="winSwitch">
+          <input id="winToggle" type="checkbox" checked disabled>
+          <span class="slider round"></span>
+        </label>
+      </div>
+
+      <div class="os-option">
+        <h3>Mac</h3>
+        <label class="switch" id="macSwitch">
+          <input id="macToggle" type="checkbox">
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div class="proceedButton">
+        <button id="procdBtn">Proceed</button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- show loading screen  -->
+  <div class="loadingScreen">
+    <!-- windows loading screen  -->
+    <div class="windowsLoadingScreen">
+      <div class="loadScrnLogo">
+        <img src="images/winlogo.png" alt="windows logo">
+        <!-- animate__animated  animate__slideInLeft -->
+        <p class="windowsTxt">
+          Windows
+        </p>
+      </div>
+      <div class="winloadAnim">
+        <div class="lds-ring">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+
+    </div>
+    <!-- mac loading screen  -->
+    <div class="macLoadingScreen">
+
+    </div>
+  </div>
+
+  <!-- the main screen  -->
+  <div class="wholeDesktop">
+    <div id="winDesktop">
+      <!-- windows desktop  -->
+      <div id="upperDesktop">
+
+        <!-- folders in desktop  -->
+        <div class="windesktopContent">
+          <!-- files and folders in desktop  -->
+          <div class="desktpItmHolder" id="dkptHolder">
+            <div class="dktpImg" id="dkpImg">
+              <img src="images/winicons/profile.png" alt="profile" width="42" />
+            </div>
+            <p class="desktopText">
+              About me
+            </p>
+          </div>
+          <!-- project folder  -->
+          <div class="desktpItmHolder" id="projFold">
+            <div class="dktpImg" id="projImg">
+              <img src="images/winicons/folder.png" alt="profile" width="42" />
+            </div>
+            <p class="desktopText">
+              Projects
+            </p>
+          </div>
+
+          <!-- lab folder  -->
+          <div class="desktpItmHolder" id="labFold">
+            <div class="dktpImg" id="labsImg">
+              <img src="images/winicons/folder.png" alt="profile" width="42" />
+            </div>
+            <p class="desktopText">
+              Labs
+            </p>
+          </div>
+
+          <!-- games folder  -->
+          <div class="desktpItmHolder" id="gamesFold">
+            <div class="dktpImg" id="gamesImg">
+              <img src="images/winicons/gamesfold.png" alt="profile" width="42" />
+            </div>
+            <p class="desktopText">
+              Game
+            </p>
+          </div>
+
+        </div>
+
+        <!-- folder when opened  closeFolder -->
+        <div class="windowsFolder closeFolder">
+          <div class="folderHeader">
+            <div class="foldHeadLft">
+              <img id="folderHeadIcon" src="images/winicons/profile.png" width="16" />
+              <p class="folderHeadName">About me</p>
+            </div>
+
+            <div class="folderHeadRght">
+              <div id="minmizeFolder">
+                <img src="images/winicons/minimize.png" alt="minimize" width="12" />
+              </div>
+              <div id="maximizeFolder">
+                <img src="images/winicons/maxmin.png" alt="minimize" width="12" />
+              </div>
+              <div id="closeFolder">
+                <img src="images/winicons/close.png" alt="minimize" width="12" />
+              </div>
+            </div>
+
+          </div>
+          <div class="folderContent">
+
+            <!-- about me folder content  -->
+            <div class="foldContnt aboutMeContent">
+              <div class="aboutHeadP">
+                <div class="abtHdItmsHold">
+                  <h1>Dhurba Tripathi</h1>
+                  <div class="intactiveExp">
+                    <h2>I am a programmer</h2>
+                  </div>
+                  <div class="abtBtnCont">
+                    <a href="https://github.com/dktpt44" class="linkBtn" target="_blank">Github</a>
+                    <a href="https://www.linkedin.com/in/dhurba-tripathi-519b0a88/" class="linkBtn"
+                      target="_blank">LinkedIn</a>
+                  </div>
+                </div>
+
+
+
+              </div>
+
+              <section class="abtMesection">
+                <div class="bgIMg">
+                  <div class="abtMeinnrItems">
+                    <!-- left panel  -->
+                    <div class="abtMecontent">
+                      <div class="head11">
+                        Hackathon
+                      </div>
+                      <img class="noCimg" src="images/myimg/qc.jpg" alt="qchackathon" />
+                      <p id="abtMeDesc"> NYUAD quantum computing hackathon, 2022</p>
+                    </div>
+
+                    <!-- right panel  -->
+                    <div class="abtMemenu">
+                      <div class="abtMenuItm abtMenuActive" id="abtMenuItm1">
+                        Hackathons
+                      </div>
+                      <div class="abtMenuItm" id="abtMenuItm2">
+                        Olympiads
+                      </div>
+                      <div class="abtMenuItm" id="abtMenuItm3">
+                        Football
+                      </div>
+                      <div class="abtMenuItm" id="abtMenuItm4">
+                        Table Tennis
+                      </div>
+
+
+                    </div>
+
+
+
+
+                  </div>
+                </div>
+
+              </section>
+
+              <section class="contactMe">
+                <div class="abtHdItmsHold">
+                  <h1>Socials</h1>
+                  <div class="intactiveExp">
+                    <h2>Contact me</h2>
+                  </div>
+
+                  <div class="abtBtnCont">
+                    <a href="https://www.facebook.com/dhurba.4.tripathi/" class="linkBtn" target="_blank">Facebook</a>
+                    <a href="https://www.instagram.com/_dhurba/" class="linkBtn" target="_blank">Instagram</a>
+                  </div>
+                </div>
+              </section>
+
+              <footer>
+                <h3>
+                  Copyright © 2022, Dhurba Tripathi
+                </h3>
+
+              </footer>
+
+
+
+            </div>
+
+            <!-- projects folder content  -->
+            <div class="foldContnt projFoldContent">
+
+              <div class="carousel">
+                <!-- carousel navigation  -->
+                <div class="carousel__nav">
+                  <!-- icons  -->
+                  <span id="moveLeft" class="carousel__arrow">
+                    <svg class="carousel__icon" width="24" height="24" viewBox="0 0 24 24">
+                      <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"></path>
+                    </svg>
+                  </span>
+                  <span id="moveRight" class="carousel__arrow">
+                    <svg class="carousel__icon" width="24" height="24" viewBox="0 0 24 24">
+                      <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path>
+                    </svg>
+                  </span>
+                </div>
+                <!-- carousel content  -->
+                <!-- first item  -->
+                <div class="carousel-item carousel-item--1">
+                  <div class="carousel-item__image"></div>
+                  <div class="carousel-item__info">
+                    <div class="carousel-item__container">
+                      <h2 class="carousel-item__subtitle">Project 1 </h2>
+                      <h1 class="carousel-item__title">30MFF</h1>
+                      <p class="carousel-item__description">30 minute film festival website is a premier website for a
+                        movie that was made in 30 minutes in class. The website is intended for the providing the
+                        synopsis of the movie.
+                        The movie is about a typical NYUAD computer Science major student. It depicts what a typical
+                        school day for a computer science major looks like. </p>
+                      <div class="labButtons2">
+                        <button onclick="lbck()" class="linkBtn" target="_blank">Preview
+                        </button>
+                        <a href="https://dktpt44.github.io/ComLab-30MFFWebsite/" class="linkBtn" target="_blank">Open in
+                          a
+                          new
+                          tab</a>
+                        <a href="https://github.com/dktpt44/ComLab-30MFFWebsite" class="linkBtn"
+                          target="_blank">Github</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- second item  -->
+                <div class="carousel-item carousel-item--2">
+                  <div class="carousel-item__image"></div>
+                  <div class="carousel-item__info">
+                    <div class="carousel-item__container">
+                      <h2 class="carousel-item__subtitle">Project 2</h2>
+                      <h1 class="carousel-item__title">Comic Strip</h1>
+                      <p class="carousel-item__description">This is a comic book project designed to be presented on a
+                        webpage. The comic tells a story of two soldiers in battle. Since the assingment required the
+                        comic to be shorter, we wanted to create a story that quickly grabs the attention of readers
+                        with exciting twists.
+                        The comic itself was hand-drawn in a drained, simplistic style. This applies some of Scott
+                        McCloud's theories of simplicity, allowing the audience to be drawn more towards the plot and
+                        characters than the actual details of the frames.</p>
+                      <div class="labButtons2">
+                        <button onclick="lbck()" class="linkBtn" target="_blank">Preview
+                        </button>
+                        <a href="https://dktpt44.github.io/ComLab-ComicStrip/" class="linkBtn" target="_blank">Open in a
+                          new
+                          tab</a>
+                        <a href="https://github.com/dktpt44/ComLab-ComicStrip" class="linkBtn"
+                          target="_blank">Github</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- third item  -->
+                <div class="carousel-item carousel-item--3">
+                  <div class="carousel-item__image"></div>
+                  <div class="carousel-item__info">
+                    <div class="carousel-item__container">
+                      <h2 class="carousel-item__subtitle">Project 3</h2>
+                      <h1 class="carousel-item__title">Sounds Like</h1>
+                      <p class="carousel-item__description"> This project takes the user on a journey on an airplane
+                        with a realistic soundscape. We invite you to become one of the ADAA Airways passengers heading
+                        to Dubai with an amazing crew. However, not a long time after the departure airplane enters the
+                        area of turbulence, and things escalate very quickly. In the end, [spoiler], it crushes. The
+                        audio and idea behind it are terrifying, but we are trying to make it less dark and scary by
+                        using the funky website design with a minimalistic touch. As a result, the experience we are
+                        striving to achieve is full of opposites: serious audio with bright pictures creates this
+                        contrast that only amplifies the impact of our project.</p>
+                      <div class="labButtons2">
+                        <button onclick="lbck()" class="linkBtn" target="_blank">Preview
+                        </button>
+                        <a href="https://dktpt44.github.io/ComLab-AudioProject/" class="linkBtn" target="_blank">Open in
+                          a
+                          new
+                          tab</a>
+                        <a href="https://github.com/dktpt44/ComLab-AudioProject" class="linkBtn"
+                          target="_blank">Github</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- fourth item  -->
+                <div class="carousel-item carousel-item--4">
+                  <div class="carousel-item__image"></div>
+                  <div class="carousel-item__info">
+                    <div class="carousel-item__container">
+                      <h2 class="carousel-item__subtitle">Project 4</h2>
+                      <h1 class="carousel-item__title">VID-E-OH!! </h1>
+                      <p class="carousel-item__description">The project mainly aims to break the fourth wall and shock
+                        the audience. The website displays our film titled “It’s You”. The plot is that the user of the
+                        website accepted all of the cookies and the privacy policy of the website without looking into
+                        what it actually was. We intentionally make the “cookies” button invisible to mimic the way the
+                        privacy policy is hidden in shady websites. This started a chain reaction of disasters: the
+                        website crashed, we started arguing among ourselves trying to figure out who sabotaged the
+                        website presentation.</p>
+                      <div class="labButtons2">
+                        <button onclick="lbck()" class="linkBtn" target="_blank">Preview
+                        </button>
+                        <a href="https://fyk211.github.io/vide-OH/" class="linkBtn" target="_blank">Open in a new
+                          tab</a>
+                        <a href="https://github.com/dktpt44/vide-OHH" class="linkBtn" target="_blank">Github</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+
+            <!-- labs folder content  -->
+
+
+            <div class="foldContnt labFoldContent">
+              <div id="carouselContentTop">
+                <div class="carContentHoolder">
+                  <h1 id="asdflj">Interactive Audio</h1>
+                  <p>I decided to use the audio that I created as part of previous assignment. I used pictures of my
+                    country to make it resourceful. There are still various bugs in the website but will fix them ASAP.
+                  </p>
+                  <div class="labButtons">
+                    <button onclick="lbck()" class="linkBtn" target="_blank">Preview
+                    </button>
+                    <a href="https://dktpt44.github.io/AudioAssignment/" class="linkBtn" target="_blank">Visit</a>
+                  </div>
+
+
+                </div>
+
+              </div>
+              <div class="nonameclaksdjfl">
+                <div id="myimgcarousel">
+                  <figure id="myimgspinner">
+                    <img src="images/labs/l1.PNG" alt>
+                    <img src="images/labs/l2.PNG" alt>
+                    <img src="images/labs/l3.PNG" alt>
+                    <img src="images/labs/l4.PNG" alt>
+                    <img src="images/labs/l6.PNG" alt>
+
+                  </figure>
+                </div>
+                <span style="float:left" class="ss-icon" onclick="galleryspin('-')">⇦</span>
+                <span style="float:right" class="ss-icon" onclick="galleryspin('')">⇨</span>
+
+              </div>
+            </div>
+
+            <!-- Games folder content  -->
+            <div class="foldContnt gamesFoldContent">
+              <div class="gamesFoldContentHolder">
+
+                <div class="iframeHolder">
+                  <iframe id="myGameId" class="gameIframe" height="118%"
+                    src="https://dktpt44.github.io/lfassignments/finalProject/">
+
+                  </iframe>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- end -->
+          </div>
+        </div>
+        <!-- windows folder end  -->
+
+        <!-- mini floating settings at the bottom right  -->
+        <div class="minisettings hideMinisettings">
+          <div class="msItemsHolder">
+            <!-- wifi  -->
+            <div class="msItem">
+              <div id="mswifi" class="msImgHolder">
+                <img src="images/winicons/wifi.png" alt="wifi" width="16" />
+              </div>
+              <p class="msItmText">
+                WiFi
+              </p>
+
+            </div>
+
+            <!-- theme  -->
+            <div class="msItem">
+              <div id="mstheme" class="msImgHolder">
+                <img src="images/winicons/theme.png" alt="wifi" width="16" />
+              </div>
+              <p class="msItmText">
+                Theme
+              </p>
+            </div>
+
+            <!-- night light  -->
+            <div class="msItem">
+              <div id="nightlight" class="msImgHolder">
+                <img src="images/winicons/nightlight.png" alt="wifi" width="16" />
+              </div>
+              <p class="msItmText">
+                Night Light
+              </p>
+
+            </div>
+          </div>
+          <div class="brightnessSlider">
+            <img src="images/winicons/theme.png" alt="brightness" width="22" />
+            <input id="slideBright" class="brightslider" type="range" value="100">
+          </div>
+          <div class="brightnessSlider">
+            <img src="images/winicons/sound.png" alt="brightness" width="20" />
+            <input id="slideAudio" class="brightslider" type="range" value="100">
+          </div>
+
+        </div>
+
+      </div>
+      <!-- windows taskbar  -->
+      <div class="winTaskbar">
+        <!-- widget panel at the left  -->
+        <div id="taskbarWidget">
+          <img src="images/winicons/widget.png" alt="win" width="24" />
+        </div>
+
+        <!-- items in the center of taskbar  -->
+        <div class="winTaskbarInner">
+          <div class="winTaskbarIconHolder">
+            <!-- windows button  -->
+            <div id="winstart" class="winTIconItem">
+              <img src="images/winicons/windowsimg.png" alt="win" width="24" />
+            </div>
+            <!-- settings button  -->
+            <div id="winSettings" class="winTIconItem">
+              <img src="images/winicons/settings.png" alt="win" width="24" />
+            </div>
+            <!-- settings button  -->
+            <div id="winexplorer" class="winTIconItem">
+              <img src="images/winicons/explorer.png" alt="win" width="24" />
+            </div>
+
+
+          </div>
+
+        </div>
+
+        <!-- items in the right of the taskbar  -->
+        <div class="tbrightItems">
+          <div class="notific">
+            <img src="images/winicons/wifi.png" alt="win" width="16" />
+            <img src="images/winicons/sound.png" alt="win" width="16" />
+          </div>
+          <div class="taskbarClock">
+            <p id="tbtime">8:00 PM</p>
+            <p id="tbdate">05/10/2022</p>
+
+          </div>
+        </div>
+      </div>
+      <!-- win taskbar end  -->
+    </div>
+
+    <div id="macDesktop">
+
+    </div>
+
+  </div>
+
+  <!-- end of wholeDesktop  -->
+
+  <!-- Design for the phone  -->
 
   <script src="js/script.js"></script>
+  <script>
+    var indexNow = 3;
+    var labProjLink = "https://dktpt44.github.io/AudioAssignment/";
+    var angle = 0;
+
+
+
+    // when preview button clicked
+    function lbck() {
+      console.log(labProjLink);
+    }
+
+
+
+
+    // when spinner button clicked
+    function galleryspin(sign) {
+      spinner = document.querySelector("#myimgspinner");
+      if (!sign) {
+        if (indexNow === 1)
+          return;
+        indexNow--;
+        angle = angle - 45;
+      } else {
+        if (indexNow === 5)
+          return;
+        indexNow++;
+        angle = angle + 45;
+      }
+
+      var headdd = $("#asdflj");
+      var headddesc = $(".carContentHoolder p");
+      var linkkk = $(".labButtons a");
+
+
+      if (indexNow === 5) {
+        // video Project
+        labProjLink = "https://drive.google.com/file/d/1g2oKAkRLqMjGpn6J-30KeI1zldjVM9rF/view";
+        headdd.text("Video Project");
+        headddesc.text("This lab contained no coding. I made a video on why people like celebrities. I looked for videos on youtube and downloaded the relevant ones to combine all to make it work.");
+      } else if (indexNow === 4) {
+        // video lab
+        labProjLink = "https://dktpt44.github.io/videoLab/";
+        headdd.text("Interactive Video Page");
+        headddesc.text("I challenged myself in this lab to get features that are beyond required. It was advanced css lab, and using css transitions and transforms, I was able to create what I wanted.");
+
+      }
+      else if (indexNow === 3) {
+        // audio lab
+        labProjLink = "https://dktpt44.github.io/AudioAssignment/";
+        headdd.text("Interactive Audio");
+        headddesc.text("I decided to use the audio that I created as part of previous assignment. I used pictures of my country to make it resourceful.There are still various bugs in the website but will fix them ASAP.");
+
+      } else if (indexNow === 2) {
+        // grid lab
+        labProjLink = "https://dktpt44.github.io/ComLab-GridLayout/";
+        headdd.text("CSS Grid Layout lab");
+        headddesc.text("Grid layout was definitely challenging to learn and get familiar with. It took me some time to experiment with some attributes to figure out how to position elements as I wanted. I explored text animation libraries to animate text and also css animations to animate image.");
+
+      } else if (indexNow === 1) {
+        labProjLink = "https://dktpt44.github.io/ComLab-CatsOfCampus/";
+        headdd.text("Cats of Campus Page");
+        headddesc.text("This lab was also one of the most entertaining ones I have had so far. I found it so entertaining that I ended up working on it for a whole day, trying new stuff, thinking about ideas and so on. I learnt a lot about Dom manipulation using JavaScript.");
+      }
+
+      // update link 
+      linkkk.attr("href", labProjLink);
+
+      spinner.setAttribute("style", "-webkit-transform: rotateY(" + angle + "deg); -moz-transform: rotateY(" + angle + "deg); transform: rotateY(" + angle + "deg);");
+    }
+
+
+  </script>
 </body>
+
 
 </html>

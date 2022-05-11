@@ -1,0 +1,1009 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 16px;
+}
+
+body {
+  --clrPrm: #0067c0;
+  background-color: black;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  overflow: hidden;
+}
+p {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* welcome screen elements css  */
+.welcomeScreen {
+  display: none;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+}
+.osOptions {
+  background-color: black;
+  border-radius: 10px;
+  height: auto;
+  padding: 40px;
+  color: white;
+}
+.osOptions h2 {
+  margin-bottom: 50px;
+}
+.os-option {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  align-items: center;
+  color: white;
+}
+.proceedButton {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  margin-top: 50px;
+}
+.proceedButton button {
+  padding: 10px 25px;
+  border-radius: 35px;
+  outline: none;
+  border: none;
+}
+/* css for switch  */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+.switch_hover {
+  border: 1px solid red;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+input:checked + .slider {
+  background-color: #2196f3;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+/* end of css for switch  */
+
+.welcomeScreen,
+.wholeDesktop,
+.loadingScreen {
+  position: relative;
+  width: 100%;
+  background-color: blueviolet;
+  height: 100vh;
+}
+
+/* loading screen elements css */
+.loadingScreen {
+  display: none;
+  /* display: block; */
+}
+.windowsLoadingScreen {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  /* background-color: black; */
+  background: rgb(2, 0, 36);
+  background: radial-gradient(
+    circle,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(2, 2, 68, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap');
+.loadScrnLogo {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.loadScrnLogo img {
+  width: 80px;
+  height: auto;
+}
+.windowsTxt {
+  color: white;
+  /* display: none; */
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 3.5em;
+  width: 0;
+  transition: width ease 1.5s;
+  overflow: hidden;
+  font-weight: 600;
+}
+
+/* windows loading css */
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  margin: 8px;
+  border: 5px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/*windows loading css end */
+
+/* windows css  */
+
+/* css for desktop  */
+.wholeDesktop {
+  background-image: url(../images/winbg/bg1.jpg);
+  background-size: cover;
+  /* display: none; */
+  display: block;
+  min-width: 800px;
+}
+#winDesktop {
+  height: 100%;
+  width: 100%;
+}
+#upperDesktop {
+  position: absolute;
+  height: calc(100vh - 46px);
+  width: 100%;
+  overflow: hidden;
+}
+/* css for windows taskbar  */
+.winTaskbar {
+  backdrop-filter: blur(20px);
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 46px;
+  background: rgba(255, 255, 255, 0.66);
+  transition: all 0.1s ease;
+}
+.winTaskbarInner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.winTaskbarIconHolder {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.tbItemActive {
+  background-color: rgba(243, 243, 243, 0.8);
+}
+.tbItemActive::after {
+  background: var(--clrPrm);
+  bottom: 5px;
+  content: '';
+  display: block;
+  border-radius: 4px;
+  height: 3px;
+  position: absolute;
+  transition: all 0.2s ease;
+  width: 14px;
+}
+.tbItemInActive {
+  background-color: rgba(243, 243, 243, 0.4);
+}
+.tbItemInActive::after {
+  background: gray !important;
+  transition: all 0.2s ease;
+  width: 8px !important;
+}
+.winTIconItem,
+#taskbarWidget {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  margin: 4px;
+  border-radius: 4px;
+  transition: all 0.1s ease-in;
+}
+.winTIconItem:hover,
+#taskbarWidget:hover,
+.notific:hover,
+.taskbarClock:hover {
+  background-color: rgba(243, 243, 243, 0.8);
+  cursor: pointer;
+}
+.itemClickAnim {
+  animation: clickedanim 0.3s ease-in-out;
+}
+
+@keyframes clickedanim {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.tbrightItems {
+  display: flex;
+}
+.notific {
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 5px;
+}
+.taskbarClock {
+  display: flex;
+  border-radius: 5px;
+  padding: 2px 8px;
+  margin: 1px 4px;
+  flex-direction: column;
+  font-size: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* mini settings on bottom right  */
+.minisettings {
+  position: absolute;
+  display: block;
+  width: 340px;
+  background-color: #dae2f2;
+  color: black;
+  z-index: 999;
+  bottom: 8px;
+  right: 8px;
+  border-radius: 5px;
+  transform: translateX(0);
+  transition: 0.25s cubic-bezier(0.62, 0, 0.32, 1);
+  box-shadow: 0 0 5px rgb(100, 100, 100);
+}
+.hideMinisettings {
+  animation: hideOverflow 0s ease-in-out 0.15s forwards;
+  transform: translateY(110%);
+  transition: all 0.15s ease-in;
+  z-index: 0;
+}
+@keyframes hideOverflow {
+  100% {
+    width: 0;
+  }
+}
+.msItemsHolder {
+  display: flex;
+  justify-content: space-between;
+  padding: 22px;
+}
+.msItem {
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.msImgHolder {
+  cursor: pointer;
+  border: 0.1px solid hsla(0, 0%, 7%, 0.1);
+  border-radius: 5px;
+  padding: 14px 32px;
+  background-color: #fbfbfb;
+}
+.msImgHolder img {
+  transition: 0.2s ease-in;
+}
+#mswifi {
+  background-color: var(--clrPrm);
+}
+#mswifi img {
+  filter: invert();
+}
+.msItmText {
+  font-size: 13px;
+}
+.brightnessSlider {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 5px;
+  margin: 32px 22px;
+}
+
+.brightnessSlider input {
+  --track-color: var(--clrPrm);
+  border: none;
+  outline: none;
+}
+.brightslider {
+  width: 100%;
+}
+@keyframes popintro {
+  0% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1.125);
+  }
+  70% {
+    transform: scale(0.725);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* desktop contents  */
+.windesktopContent {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex-wrap: wrap;
+}
+.desktpItmHolder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: default;
+  gap: 5px;
+  margin: 5px;
+  height: 96px;
+  width: 80px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+.desktpItmHolder:hover {
+  background: hsla(0, 0%, 100%, 0.25);
+}
+.desktopText {
+  font-size: 13px;
+  color: white;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+}
+
+/* windows folder  */
+.windowsFolder {
+  height: 88%;
+  left: 13%;
+  top: 6%;
+  width: 74%;
+  background: #fff;
+  border-radius: 6px;
+  position: absolute;
+  transform-origin: center;
+  transition: all 0.2s ease-in;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+}
+.minimizeFolder {
+  opacity: 0;
+  z-index: -1;
+  transform: scale(0.5);
+  transform-origin: bottom;
+  pointer-events: none;
+}
+.maximizeFolder {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+.closeFolder {
+  opacity: 0;
+  z-index: -1;
+  transform: scale(0.5);
+  transform-origin: center;
+  pointer-events: none;
+}
+
+.folderHeader {
+  align-items: center;
+  border-radius: 6px 6px 0 0;
+  display: flex;
+  flex-shrink: 0;
+  height: 32px;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.foldHeadLft {
+  display: flex;
+  padding: 0 8px;
+  height: 100%;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+.folderHeadName {
+  font-size: 12px;
+}
+.folderHeadRght {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.folderHeadRght div {
+  height: 100%;
+  padding: 0 16px;
+}
+#closeFolder:hover {
+  background: rgba(255, 0, 0, 0.9);
+}
+#maximizeFolder,
+#closeFolder {
+  padding-top: 8px;
+}
+#maximizeFolder:hover,
+#minmizeFolder:hover {
+  background: lightgray;
+}
+
+/* about me  */
+.aboutMeContent {
+  display: none;
+}
+.aboutMeContent,
+.folderContent {
+  width: 100%;
+}
+.folderContent {
+  overflow-y: scroll;
+}
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@600&display=swap');
+.aboutHeadP {
+  width: 100%;
+  text-align: center;
+  background: url(../images/profileBg/background.jpg) no-repeat center center
+    fixed;
+  background-size: cover;
+  font-family: 'Source Code Pro', monospace;
+  color: white;
+}
+.aboutHeadP h1 {
+  font-size: 3.4rem;
+  padding: 90px 0 55px;
+}
+.aboutHeadP h2 {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 1.9rem;
+  padding-bottom: 30px;
+}
+.abtHdItmsHold {
+  padding: 8% 0px 10%;
+  backdrop-filter: blur(2px);
+}
+.linkBtn {
+  text-decoration: none;
+  background: #5577ea;
+  border: 2px solid #5577ea;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 13px;
+  padding: 6px 24px 8px;
+}
+.linkBtn:hover {
+  background: #5577ea;
+  border: 2px solid hsla(0, 0%, 100%, 0.33);
+}
+.abtBtnCont {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding-bottom: 20px;
+}
+.abtMesection {
+  position: relative;
+  z-index: 2;
+  width: auto;
+  background: rgb(51, 51, 65);
+  background: linear-gradient(
+    180deg,
+    rgba(51, 51, 65, 1) 0%,
+    rgba(43, 22, 47, 1) 100%
+  );
+  min-height: 500px;
+}
+.bgIMg {
+  background: url(../images/myimg/clouds.png) no-repeat;
+  background-size: 500px;
+  padding: 8% 0px;
+}
+.abtMeinnrItems {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.abtMecontent {
+  text-align: left;
+  width: 60%;
+  padding-left: 8%;
+  animation-duration: 0.5s;
+}
+.abtMecontent img {
+  border-radius: 5px;
+  margin-top: 28px;
+  width: 75%;
+}
+.noCimg {
+  animation-duration: 1.5s;
+}
+.abtMemenu {
+  width: 30%;
+
+  background-color: hsla(0, 0%, 100%, 0);
+  flex-direction: column;
+  justify-content: left !important;
+  color: rgba(67, 245, 242, 0.42);
+}
+.abtMenuActive {
+  color: #43f5f2;
+}
+.abtMenuItm {
+  cursor: pointer;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  transition: all 0.2s linear;
+}
+.head11 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #ddd;
+}
+
+#abtMeDesc {
+  color: #ccc;
+  margin-top: 12px;
+}
+
+/* contact me section  */
+.contactMe {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  background: url(../images/profileBg/socials.jpg) no-repeat center center fixed;
+  background-size: contain;
+  color: beige;
+}
+.contactMe .abtHdItmsHold {
+  background-color: rgba(0, 0, 0, 0.5);
+
+  backdrop-filter: blur(0px);
+  padding: 10% 0;
+}
+
+.contactMe h1 {
+  font-size: 2em;
+  padding-bottom: 5%;
+}
+
+.contactMe h2 {
+  font-size: 1.4em;
+  padding-bottom: 28px;
+}
+
+footer {
+  padding: 18%;
+  background-color: black;
+  color: white;
+  font-size: 1.2em;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* project folder css  */
+.projFoldContent,
+.folderContent {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.projFoldContent {
+  display: none;
+}
+
+.labButtons2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 1s ease-in;
+}
+.labButtons2 a {
+  padding-top: 2px;
+  padding-bottom: 5px;
+  margin-top: 10px;
+}
+.labButtons2 button {
+  margin-top: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+.carousel {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-item {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  visibility: visible;
+  background: rgb(51, 51, 65);
+  background: linear-gradient(
+    180deg,
+    rgba(51, 51, 65, 1) 0%,
+    rgba(43, 22, 47, 1) 100%
+  );
+  flex-shrink: 0;
+  position: absolute;
+  z-index: 0;
+  transition: 0.6s all linear;
+}
+
+.carousel-item__info {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  order: 1;
+  left: 0;
+  margin: auto;
+  padding: 0 40px;
+  width: 45%;
+}
+
+.carousel-item__image {
+  width: 55%;
+  height: 100%;
+  order: 2;
+  align-self: flex-end;
+  flex-basis: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  transform: translateX(100%);
+  transition: 0.6s all ease-in-out;
+}
+
+.carousel-item__subtitle {
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 3px;
+  font-size: 10px;
+  text-transform: uppercase;
+  margin: 0;
+  color: #cdcdcd;
+  font-weight: 700;
+  transform: translateY(25%);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s all ease-in-out;
+}
+
+.carousel-item__title {
+  margin: 15px 0 0 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 44px;
+  line-height: 45px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  color: white;
+  transform: translateY(25%);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.6s all ease-in-out;
+}
+
+.carousel-item__description {
+  transform: translateY(25%);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.6s all ease-in-out;
+  margin-top: 35px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  color: #adaaaa;
+  line-height: 22px;
+  margin-bottom: 35px;
+}
+
+.carousel-item--1 .carousel-item__image {
+  background-image: url('../images/projects/p1.PNG');
+}
+
+.carousel-item--2 .carousel-item__image {
+  background-image: url('../images/projects/p2.PNG');
+}
+
+.carousel-item--3 .carousel-item__image {
+  background-image: url('../images/projects/p3.PNG');
+}
+
+.carousel-item--4 .carousel-item__image {
+  background-image: url('../images/projects/p4.PNG');
+}
+
+.carousel__nav {
+  position: absolute;
+  right: 0;
+  z-index: 10;
+  background-color: #fff;
+  bottom: 0;
+}
+
+.carousel__icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 16px;
+  fill: #5d5d5d;
+}
+
+.carousel__arrow {
+  cursor: pointer;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+}
+
+.carousel__arrow:nth-child(1):after {
+  content: '';
+  right: -3px;
+  position: absolute;
+  width: 1px;
+  background-color: #b0b0b0;
+  height: 14px;
+  top: 50%;
+  margin-top: -7px;
+}
+
+/* visible  */
+.active {
+  z-index: 1;
+  display: flex;
+  visibility: visible;
+}
+
+.active .carousel-item__subtitle,
+.active .carousel-item__title,
+.active .carousel-item__description,
+.active .carousel-item__btn {
+  transform: translateY(0);
+  opacity: 1;
+  transition: 0.6s all ease-in-out;
+  visibility: visible;
+}
+
+.active .carousel-item__image {
+  transition: 0.6s all ease-in-out;
+  transform: translateX(0);
+}
+
+/* lab folder css  */
+
+.labFoldContent {
+  display: none;
+  height: 100%;
+  background: rgb(51, 51, 65);
+  background: linear-gradient(
+    180deg,
+    rgba(51, 51, 65, 1) 0%,
+    rgba(43, 22, 47, 1) 100%
+  );
+}
+
+#carouselContentTop {
+  padding: 40px;
+  color: white;
+}
+.carContentHoolder {
+  text-align: center;
+}
+.carContentHoolder p {
+  margin: 20px 50px;
+}
+.labButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 400px;
+}
+.labButtons a {
+  padding-top: 2px;
+  padding-bottom: 5px;
+  margin-top: 10px;
+}
+.labButtons button {
+  margin-top: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+#myimgcarousel {
+  perspective: 1200px;
+  font-size: 0;
+  margin-bottom: 2rem;
+  margin-top: 35px;
+  overflow: hidden;
+}
+#myimgspinner {
+  transform-style: preserve-3d;
+  height: 300px;
+  transform-origin: 50% 50% -500px;
+  transition: 1s;
+}
+#myimgspinner img {
+  width: 35%;
+  border-radius: 10px;
+  max-width: 380px;
+  min-width: 340px;
+  position: absolute;
+  left: 35%;
+  transform-origin: 50% 50% -500px;
+  outline: 1px solid transparent;
+}
+#myimgspinner img:nth-child(1) {
+  transform: rotateY(90deg);
+}
+#myimgspinner img:nth-child(2) {
+  transform: rotateY(45deg);
+}
+#myimgspinner img:nth-child(3) {
+  transform: rotateY(0deg);
+}
+#myimgspinner img:nth-child(4) {
+  transform: rotateY(-45deg);
+}
+#myimgspinner img:nth-child(5) {
+  transform: rotateY(-90deg);
+}
+
+.ss-icon {
+  color: #fff;
+  margin: 5%;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 3rem;
+  transition: 0.6s color;
+  position: relative;
+  margin-top: -5rem;
+  border-bottom: none;
+  line-height: 0;
+}
+.ss-icon:hover {
+  color: #888;
+  cursor: pointer;
+}
+
+.gamesFoldContent {
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+.gamesFoldContentHolder {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.iframeHolder {
+  padding-left: 180px;
+}
+.iframeHolder2 {
+  padding-left: 100px;
+}
+
+.gameIframe {
+  margin: 30px auto 0;
+  display: block;
+  width: 900px;
+  overflow: hidden;
+  border: none;
+  zoom: 0.75;
+  transform: scale(0.75);
+  transform-origin: 0 0;
+  transition: all 0.2s ease-in;
+}
+.iframeFulScreen {
+  zoom: 0.9;
+  transform: scale(0.9);
+  transform-origin: 0 0;
+}
