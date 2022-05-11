@@ -5,7 +5,9 @@
 html {
   font-size: 16px;
 }
-
+button {
+  display: none;
+}
 body {
   --clrPrm: #0067c0;
   background-color: black;
@@ -20,8 +22,8 @@ p {
 
 /* welcome screen elements css  */
 .welcomeScreen {
-  display: none;
-  /* display: flex; */
+  /* display: none; */
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -220,7 +222,7 @@ input:checked + .slider:before {
   background-image: url(../images/winbg/bg1.jpg);
   background-size: cover;
   transition: all 0.2s ease-in;
-  /* display: none; */
+  display: none;
   min-width: 800px;
 }
 .wholeDesktopDark {
@@ -880,35 +882,26 @@ footer {
 
 .carousel__nav {
   position: absolute;
-  right: 0;
+  right: 4px;
   z-index: 10;
-  background-color: #fff;
-  bottom: 0;
+  background-color: transparent;
+  bottom: 4px;
 }
 
 .carousel__icon {
   display: inline-block;
   vertical-align: middle;
   width: 16px;
-  fill: #5d5d5d;
+  fill: white;
 }
 
 .carousel__arrow {
   cursor: pointer;
   display: inline-block;
-  padding: 8px 12px;
+  padding: 4px 8px;
   position: relative;
-}
-
-.carousel__arrow:nth-child(1):after {
-  content: '';
-  right: -3px;
-  position: absolute;
-  width: 1px;
-  background-color: #b0b0b0;
-  height: 14px;
-  top: 50%;
-  margin-top: -7px;
+  border-radius: 50%;
+  background-color: rgba(43, 22, 47, 1);
 }
 
 /* visible  */
